@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple, transparent lead scoring workspace." />
+    <title>LeadScore — Prioritize your next conversation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="LeadScore home"><span class="brand-mark">L</span>LeadScore</a>
+      <nav aria-label="Main navigation">
+        <a class="active" href="#workspace">Workspace</a>
+        <a href="#method">Method</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Open account menu">IP</button>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="workspace">
+        <div>
+          <p class="eyebrow">Sales workspace</p>
+          <h1>Know which conversation deserves your attention.</h1>
+          <p class="hero-copy">Score new leads consistently with a simple, explainable model your whole team can trust.</p>
+        </div>
+        <aside class="daily-goal" aria-label="Today's follow-up goal">
+          <span>Today’s focus</span>
+          <strong>3 high-intent leads</strong>
+          <div class="progress"><span></span></div>
+          <small>1 of 3 reviewed</small>
+        </aside>
+      </section>
+
+      <section class="workspace-grid" aria-label="Lead scoring workspace">
+        <article class="panel lead-form-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">New lead</p>
+              <h2>Tell us who you met</h2>
+            </div>
+            <span class="step">Step 1 of 2</span>
+          </div>
+          <form id="lead-form">
+            <label>Full name<input id="name" name="name" type="text" placeholder="e.g. Jordan Lee" required /></label>
+            <label>Company<input id="company" name="company" type="text" placeholder="e.g. Northstar Studio" required /></label>
+            <div class="form-row">
+              <label>Company size
+                <select id="size" name="size">
+                  <option value="small">1–10</option>
+                  <option value="medium">11–50</option>
+                  <option value="large">51–250</option>
+                  <option value="enterprise">251+</option>
+                </select>
+              </label>
+              <label>Budget fit
+                <select id="budget" name="budget">
+                  <option value="exploring">Exploring</option>
+                  <option value="likely">Likely</option>
+                  <option value="confirmed">Confirmed</option>
+                </select>
+              </label>
+            </div>
+            <label>Notes<textarea id="notes" name="notes" rows="3" placeholder="What problem are they trying to solve?"></textarea></label>
+            <button class="button primary" type="submit">Calculate lead score <span>→</span></button>
+          </form>
+        </article>
+
+        <article class="panel score-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Score preview</p>
+              <h2>Ready when you are</h2>
+            </div>
+            <span class="status neutral" id="score-status">Not scored</span>
+          </div>
+          <div class="score-empty" id="score-empty">
+            <div class="sparkle">✦</div>
+            <p>Complete the lead details to reveal a score and a recommended next step.</p>
+          </div>
+          <div class="score-result hidden" id="score-result">
+            <div class="score-number"><strong id="score-value">0</strong><span>/ 100</span></div>
+            <h3 id="score-title">Priority</h3>
+            <p id="score-message"></p>
+            <div class="reason-list" id="reason-list"></div>
+            <button class="button secondary" id="save-lead" type="button">Save to review list</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="method" id="method">
+        <p class="eyebrow">A transparent method</p>
+        <h2>No black box, just signals that matter.</h2>
+        <div class="method-grid">
+          <article><span>01</span><h3>Right size</h3><p>Prioritize teams that have enough complexity to benefit now.</p></article>
+          <article><span>02</span><h3>Budget signal</h3><p>Separate curiosity from buyers who are ready to invest.</p></article>
+          <article><span>03</span><h3>Clear next move</h3><p>Turn the score into a prompt, follow-up, or discovery call.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>Built for focused sales conversations.</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
